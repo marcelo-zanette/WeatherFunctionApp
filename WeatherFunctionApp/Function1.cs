@@ -74,7 +74,7 @@ namespace WeatherFunctionApp
                 }
             }
 
-            responseMessage += " (R001)";
+            responseMessage += " (R002)";
 
             log.LogInformation(responseMessage);
 
