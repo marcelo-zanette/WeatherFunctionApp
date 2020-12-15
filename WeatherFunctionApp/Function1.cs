@@ -52,13 +52,27 @@ namespace WeatherFunctionApp
             decimal deg = ((decimal)new Random().Next(start, end) / 10);
             decimal temp = Math.Round(deg, 1);
 
-            string responseMessage = 
-                environment + 
-                "-" + 
-                (string.IsNullOrEmpty(city)
-                    ? "City name not defined (city=[city-name])"
-                    : $"The weather in {city} is around {temp} C."
-                );
+            string responseMessage = environment + "-";
+
+            if (string.IsNullOrEmpty(city))
+            {
+                responseMessage += "City name not defined (city=[city-name])";
+            }
+            else
+            {
+                string custom_message = config["custom_message"];
+
+                if(string.IsNullOrEmpty(custom_message))
+                {
+                    responseMessage += $"The weather in {city.ToUpper()} is around {temp} C.";
+                }
+                else
+                {
+                    responseMessage += custom_message
+                        .Replace("{city}", city)
+                        .Replace("{temp}", temp.ToString());
+                }
+            }
 
             log.LogInformation(responseMessage);
 
