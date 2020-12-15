@@ -64,7 +64,7 @@ namespace WeatherFunctionApp
 
                 if(string.IsNullOrEmpty(custom_message))
                 {
-                    responseMessage += $"The weather in {city.ToUpper()} is around {temp} C.";
+                    responseMessage += $"The weather in {city.ToUpper()} is {temp} C.";
                 }
                 else
                 {
