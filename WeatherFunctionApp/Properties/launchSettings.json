@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "WeatherFunctionApp": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "httpPort": 30900,
+      "useSSL": false
+    }
+  }
+}
