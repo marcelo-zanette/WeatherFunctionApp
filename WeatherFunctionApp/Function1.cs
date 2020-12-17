@@ -58,7 +58,8 @@ namespace WeatherFunctionApp
                 (string.IsNullOrEmpty(city)
                     ? "City name not defined (city=[city-name])"
                     : $"The weather in {city} is around {temp} C."
-                );
+                ) +
+                "(R003)";
 
             log.LogInformation(responseMessage);
 
