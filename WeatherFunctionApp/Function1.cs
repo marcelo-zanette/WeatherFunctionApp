@@ -57,7 +57,7 @@ namespace WeatherFunctionApp
                 "-" + 
                 (string.IsNullOrEmpty(city)
                     ? "City name not defined (city=[city-name])"
-                    : $"The weather in {city} is around {temp} C."
+                    : $"The weather in {city.ToUpper()} is around {temp} C."
                 ) +
                 "(R003)";
 
